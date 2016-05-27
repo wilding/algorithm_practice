@@ -67,11 +67,11 @@ class BST(object):
         as they are visited in
         a pre-order traversal."""
         output = ""
-        traversal = self.preorder_print(self.root, [])
+        traversal = self.inorder_print(self.root, [])
         for value in traversal:
             output += str(value) + "-"
         output = output[:-1]
-        print output
+        return output
 
     def bst_search(self, start, find_val):
         """Helper method - use this to create a
@@ -102,13 +102,13 @@ class BST(object):
                     start.right = Node(new_val)
         pass
 
-    def preorder_print(self, start, traversal):
+    def inorder_print(self, start, traversal):
         """Helper method - use this to create a
         recursive print solution."""
         if start:
-            traversal.append(start.value)
             if start.left:
-                traversal = self.preorder_print(start.left, traversal)
+                traversal = self.inorder_print(start.left, traversal)
+            traversal.append(start.value)
             if start.right:
-                traversal = self.preorder_print(start.right, traversal)
+                traversal = self.inorder_print(start.right, traversal)
         return traversal
