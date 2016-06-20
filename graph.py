@@ -37,3 +37,8 @@ class Graph(object):
 		from_found.edges.append(new_edge)
 		to_found.edges.append(new_edge)
 		self.edges.append(new_edge)
+	def get_edge_list(self):
+		edge_list = []
+		for edge in self.edges:
+			edge_list.append((edge.value, edge.node_from.value, edge.node_to.value))
+		return edge_list
