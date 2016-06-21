@@ -17,12 +17,12 @@ class Graph(object):
 		self.nodes = nodes
 		self.edges = edges
 	def insert_node(self, new_node_value):
-		"""creates a new node with the given value and
+		"""Creates a new node with the given value and
 		inserts it into the graph's list of nodes"""
 		new_node = Node(new_node_value)
 		self.nodes.append(new_node)
 	def insert_edge(self, new_edge_value, node_from_val, node_to_val):
-		"""creates a new edge with a given value between nodes with the specified values.
+		"""Creates a new edge with a given value between nodes with the specified values.
 		If no nodes exist with the given values, new nodes are created.
 		The new edge is then added to the graph's list of edges,
 		as well as the individual node's list of edges"""
@@ -44,7 +44,7 @@ class Graph(object):
 		to_found.edges.append(new_edge)
 		self.edges.append(new_edge)
 	def get_edge_list(self):
-		"""returns a list of tuples, each representing an edge,
+		"""Returns a list of tuples, each representing an edge,
 		that contain the edge value, the value of the origin node,
 		and the value of the destination node"""
 		edge_list = []
@@ -70,3 +70,24 @@ class Graph(object):
 				adjacency_list.append(None)
 		return adjacency_list
 	def get_adjacenty_matrix(self):
+		"""Returns a list of lists, forming a matrix
+		where the row represents the origin node and
+		the column represents the destination node.
+		If an edge exists between the origin and the destination,
+		it's value is added to the appropriate position within the matrix"""
+		adjacency_matrix = []
+		for node in self.nodes:
+			matrix_row = []
+			counter = 1
+			for subnode in self.nodes:
+				for edge in node.edges:
+					if edge.node_to == subnode and edge.node_from == node:
+						matrix_row.append(edge.value)
+				if len(matrix_row) < counter:
+					matrix_row.append(0)
+				counter += 1
+			adjacency_matrix.append(matrix_row)
+		return adjacency_matrix
+
+
+
