@@ -52,9 +52,12 @@ class Graph(object):
 			edge_list.append((edge.value, edge.node_from.value, edge.node_to.value))
 		return edge_list
 	def get_adjacency_list(self):
-		"""returns a list of lists, list indices represent a node.
-		Each sublist contains tuples that contain values of edges connected
-		to the node, as well as the value of the destination node for the edge"""
+		"""Returns a list of lists, list indices
+		represent each node in the graph.
+		Each sublist contains tuples
+		for each outbound edge from the node.
+		The tuples store the value of the connected node,
+		and the value of the edge."""
 		adjacency_list = []
 		for node in self.nodes:
 			sublist = []
