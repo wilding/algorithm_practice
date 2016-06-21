@@ -51,3 +51,19 @@ class Graph(object):
 		for edge in self.edges:
 			edge_list.append((edge.value, edge.node_from.value, edge.node_to.value))
 		return edge_list
+	def get_adjacency_list(self):
+		"""returns a list of lists, list indices represent a node.
+		Each sublist contains tuples that contain values of edges connected
+		to the node, as well as the value of the destination node for the edge"""
+		adjacency_list = []
+		for node in self.nodes:
+			sublist = []
+			for edge in node.edges:
+				if edge.node_to != node:
+					sublist.append((edge.node_to.value, edge.value))
+			if sublist:
+				adjacency_list.append(sublist)
+			else:
+				adjacency_list.append(None)
+		return adjacency_list
+	def get_adjacenty_matrix(self):
