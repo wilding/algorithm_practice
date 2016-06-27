@@ -27,7 +27,6 @@ def bubble_sort(inputArray):
         sorted_point = len(inputArray) - iterations
         sublist = inputArray[:sorted_point]
         for index, value in enumerate(sublist):
-            print index
             if index < sorted_point - 1 and value > sublist[index + 1]:
                 greater = value
                 lesser = sublist[index + 1]
@@ -36,10 +35,7 @@ def bubble_sort(inputArray):
                 swap = True
         iterations += 1
         inputArray[:sorted_point] = sublist
-        print inputArray
     return inputArray
-
-array1, array2, array3, array4 = [1, 2, 3, 4, 5], [5, 4, 3, 2, 1], [1, 2, 3, 5, 4], [2, 1, 3, 4, 5]
 
 #def merge_sort():
 #def quick_sort():
