@@ -21,17 +21,25 @@ def get_fib(position):
 
 def bubble_sort(inputArray):
     iterations = 0
-    while iterations < len(inputArray):
-        for index, value in enumerate(inputArray):
-            sorted_point = len(inputArray) - 1 - iterations
-            if index < sorted_point and value > inputArray[index + 1]:
+    swap = True
+    while swap:
+        swap = False
+        sorted_point = len(inputArray) - iterations
+        sublist = inputArray[:sorted_point]
+        for index, value in enumerate(sublist):
+            print index
+            if index < sorted_point - 1 and value > sublist[index + 1]:
                 greater = value
-                lesser = inputArray[index + 1]
-                inputArray[index] = lesser
-                inputArray[index + 1] = greater
+                lesser = sublist[index + 1]
+                sublist[index] = lesser
+                sublist[index + 1] = greater
+                swap = True
         iterations += 1
+        inputArray[:sorted_point] = sublist
+        print inputArray
     return inputArray
 
+array1, array2, array3, array4 = [1, 2, 3, 4, 5], [5, 4, 3, 2, 1], [1, 2, 3, 5, 4], [2, 1, 3, 4, 5]
 
 #def merge_sort():
 #def quick_sort():
