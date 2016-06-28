@@ -25,24 +25,26 @@ def bubble_sort(inputArray):
     new_point = None
     while swap and sorted_point > 1:
         swap = False
-        sublist = inputArray[:sorted_point]
-        for index, value in enumerate(sublist):
-            if index < sorted_point - 1 and value > sublist[index + 1]:
-                greater = value
-                lesser = sublist[index + 1]
-                sublist[index] = lesser
-                sublist[index + 1] = greater
+        for index in range(sorted_point):
+            value = inputArray[index]
+            if index == sorted_point - 1:
+                next_value = None
+            else:
+                next_value = inputArray[index + 1]
+            if next_value and value > next_value:
+                inputArray[index] = next_value
+                inputArray[index + 1] = value
                 swap = True
                 new_point = index + 1
-        inputArray[:sorted_point] = sublist
         sorted_point = new_point
     return inputArray
 
 
-
-
 #def merge_sort():
 #def quick_sort():
+
+
+
 #def timsort():
 #def heap_sort():
 #def insertion_sort():
