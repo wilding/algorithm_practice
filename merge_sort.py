@@ -1,16 +1,11 @@
 def merge_sort(inputArray):
     if len(inputArray) <= 1:
         return inputArray
-    left = []
-    right = []
-    for i in range(len(inputArray)):
-        value = inputArray[i]
-        if i % 2 == 0:
-            right.append(value)
-        else:
-            left.append(value)
-    left = merge_sort(left)
-    right = merge_sort(right)
+
+    mid = len(inputArray) / 2
+    left = merge_sort(inputArray[:mid])
+    right = merge_sort(inputArray[mid:])
+
     if left[-1] <= right[0]:
         return left + right
     if right[-1] <= left[0]:
