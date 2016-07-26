@@ -10,11 +10,14 @@ def insertion_sort(inputArray):
     return inputArray
 
 
-array1 = [1, 2, 3, 4, 5]
-array2 = [5, 4, 3, 2, 1]
+# Testing
+array1 = [1, 2, 3, 4, 5]  # best case
+array2 = [5, 4, 3, 2, 1]  # worst case
 array3 = [2, 4, 1, 5, 3]
 array4 = [2, 2, 2, 2, 2]
+array5 = ['e', 'd', 'c', 'b', 'a']
 print insertion_sort(array1)
 print insertion_sort(array2)
 print insertion_sort(array3)
 print insertion_sort(array4)
+print insertion_sort(array5)
