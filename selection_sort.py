@@ -20,7 +20,9 @@ array1 = [1, 2, 3, 4, 5]
 array2 = [5, 4, 3, 2, 1]
 array3 = [2, 4, 1, 5, 3]
 array4 = [2, 2, 2, 2, 2]
+array5 = ['e', 'd', 'c', 'b', 'a']
 print selection_sort(array1)
 print selection_sort(array2)
 print selection_sort(array3)
 print selection_sort(array4)
+print selection_sort(array5)
