@@ -1,5 +1,9 @@
 def get_fib(position):
-    """docstring for get_fib"""
+    """input: nonnegative int representing a position on the fibonacci sequence
+    output: fibonacci number corresponding to given position of the sequence
+    returns -1 for negative inputs
+    recursive function
+    """
     if position < 0:
         return -1
     if position == 0 or position == 1:
@@ -9,7 +13,10 @@ def get_fib(position):
 
 
 def get_fib_list(position):
-    """docstring for get_fib_list"""
+    """input: nonnegative int representing a position on the fibonacci sequence
+    output: list of the fibonacci sequence, ending at the specified position
+    returns -1 for negative inputs
+    recursive function"""
     if position < 0:
         return -1
     if position == 0 or position == 1:
