@@ -1,4 +1,16 @@
 def merge_sort(inputArray):
+    """input: array
+    output: new sorted array
+    features: stable
+    efficiency: O(n log(n)) (worst/avg/best cases)
+    space complexity: O(n)
+    method:
+    Recursively breaks down arrays into smaller sorted arrays,
+    then merges them with the merge() helper function.
+    If the last element of one smaller, sorted array is less than
+    or equal to the first value of the other,
+    the merge() helper function is unnecessary.
+    """
     if len(inputArray) <= 1:
         return inputArray
 
@@ -14,6 +26,13 @@ def merge_sort(inputArray):
 
 
 def merge(left, right):
+    """helper function for merge_sort()
+    inputs: 2 sorted arrays
+    output: 1 merged sorted array
+    Compares first value of each array.
+    Removes lesser value and adds it to new array.
+    Continues until both arrays are empty.
+    """
     result = []
     while left and right:
         if left[0] <= right[0]:
