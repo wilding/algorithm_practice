@@ -50,11 +50,14 @@ def merge(left, right):
     return result
 
 
+# Testing
 array1 = [2, 4, 3, 5, 1]
 array2 = [6, 8, 9, 3, 12, 999, 32, 498, 901]
 array3 = [x for x in range(100)]
 array4 = [4, 73, 23, 41, 97, 444, 75, 0, -34, 88, 88, 90, 345, 79]
+array5 = ['e', 'd', 'c', 'b', 'a']
 print merge_sort(array1)
 print merge_sort(array2)
 print merge_sort(array3)
 print merge_sort(array4)
+print merge_sort(array5)

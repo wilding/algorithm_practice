@@ -27,6 +27,7 @@ def selection_sort(inputArray):
     return inputArray
 
 
+# Testing
 array1 = [1, 2, 3, 4, 5]
 array2 = [5, 4, 3, 2, 1]
 array3 = [2, 4, 1, 5, 3]

@@ -63,13 +63,22 @@ def in_place_quicksort(inputArray):
     return inputArray
 
 
+# Testing
 array1 = [1, 2, 3, 4, 5]  # worst case - quadratic
 array2 = [2, 4, 1, 3, 5]  # avg case - linearithmic
 array3 = [2, 2, 2, 2, 2]  # best case - linear
 array4 = [2, 7, 6, 3, 5]
 array5 = [2, 7, 6, 8, 5]
+array6 = ['e', 'd', 'c', 'b', 'a']
 print quicksort(array1)
 print quicksort(array2)
 print quicksort(array3)
 print quicksort(array4)
 print quicksort(array5)
+print quicksort(array6)
+print in_place_quicksort(array1)
+print in_place_quicksort(array2)
+print in_place_quicksort(array3)
+print in_place_quicksort(array4)
+print in_place_quicksort(array5)
+print in_place_quicksort(array6)

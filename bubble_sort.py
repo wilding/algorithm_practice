@@ -33,8 +33,9 @@ def bubble_sort(inputArray):
     return inputArray
 
 
-array1 = [1, 2, 3, 4, 5]
-array2 = [5, 4, 3, 2, 1]
+# Testing
+array1 = [1, 2, 3, 4, 5]  # best case - linear
+array2 = [5, 4, 3, 2, 1]  # worst case - quadratic
 array3 = [2, 1, 3, 4, 5]
 array4 = [2, 2, 2, 2, 2]
 array5 = ['e', 'd', 'c', 'b', 'a']

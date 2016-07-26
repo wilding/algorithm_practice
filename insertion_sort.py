@@ -21,8 +21,8 @@ def insertion_sort(inputArray):
 
 
 # Testing
-array1 = [1, 2, 3, 4, 5]  # best case
-array2 = [5, 4, 3, 2, 1]  # worst case
+array1 = [1, 2, 3, 4, 5]  # best case - linear
+array2 = [5, 4, 3, 2, 1]  # worst case - quadratic
 array3 = [2, 4, 1, 5, 3]
 array4 = [2, 2, 2, 2, 2]
 array5 = ['e', 'd', 'c', 'b', 'a']

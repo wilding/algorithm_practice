@@ -27,7 +27,8 @@ def get_fib_list(position):
         return fiblist
 
 
+# Testing
 print get_fib(-1)
-print [get_fib(x) for x in range(31)]
+print [get_fib(x) for x in range(31)]  # slower
 print get_fib_list(-1)
-print get_fib_list(30)
+print get_fib_list(30)                 # faster
