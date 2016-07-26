@@ -1,5 +1,16 @@
 def selection_sort(inputArray):
-    """docstring for selection_sort"""
+    """input: array
+    output: sorted array
+    features: in-place, adaptive, stable
+    efficiency: O(n^2) (worst/avg/best cases)
+    space complexity: O(1)
+    method:
+    starting with 0, record index where every previous element is sorted
+    iterate through the unsorted portion of the list
+    each iteration, find the min value in the unsorted portion
+    swap the min value with the first value in the unsorted portion
+    increase index of sorted portion by 1 to include the value
+    iterate until the full list is sorted"""
     sort_point = 0
     while sort_point < len(inputArray) - 1:
         minval = inputArray[sort_point]
