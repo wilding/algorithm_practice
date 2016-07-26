@@ -1,4 +1,5 @@
 def binary_search(listData, value):
+    """docstring for binary_search"""
     low = 0
     high = len(listData) - 1
     while low <= high:
@@ -10,23 +11,3 @@ def binary_search(listData, value):
         elif listData[mid] > value:
             high = mid + 1
     return -1
-
-
-def get_fib(position):
-    if position == 0 or position == 1:
-        return position
-    else:
-        return get_fib(position - 1) + get_fib(position - 2)
-
-
-#   Sorting   #######
-
-
-# def quick_sort():
-# def timsort():
-# def heap_sort():
-# def insertion_sort():
-# def selection_sort():
-# def shell_sort():
-# def bucket_sort():
-# def radix_sort():
