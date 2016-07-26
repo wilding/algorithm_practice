@@ -1,5 +1,15 @@
 def insertion_sort(inputArray):
-    """docstring for insertion_sort"""
+    """input: array
+    output: sorted array
+    features: in-place, stable, adaptive, online
+    efficiency: O(n^2) (worst/avg cases), O(n) (best case)
+    space complexity: O(1)
+    method:
+    Iterate through the array.
+    If the previous value is greater than the current value,
+    move previous value to current index.
+    Continue backwards until current value is larger than the previous value,
+    and assign the value to the corresponding index."""
     for index in range(len(inputArray)):
         value = inputArray[index]
         position = index
