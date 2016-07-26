@@ -9,7 +9,7 @@ def binary_search(listData, value):
         elif listData[mid] < value:
             low = mid + 1
         elif listData[mid] > value:
-            high = mid + 1
+            high = mid - 1
     return -1
 
 
