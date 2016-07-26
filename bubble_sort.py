@@ -31,3 +31,15 @@ def bubble_sort(inputArray):
                 new_point = index + 1
         sorted_point = new_point
     return inputArray
+
+
+array1 = [1, 2, 3, 4, 5]
+array2 = [5, 4, 3, 2, 1]
+array3 = [2, 1, 3, 4, 5]
+array4 = [2, 2, 2, 2, 2]
+array5 = ['e', 'd', 'c', 'b', 'a']
+print bubble_sort(array1)
+print bubble_sort(array2)
+print bubble_sort(array3)
+print bubble_sort(array4)
+print bubble_sort(array5)
