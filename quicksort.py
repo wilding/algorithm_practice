@@ -1,4 +1,16 @@
 def quicksort(inputArray):
+    """input: array
+    output: new sorted array
+    features: stable
+    efficiency O(n^2) (worst case), O(n log(n)) (avg case), O(n) (best case):
+    space complexity: O(n)
+    method:
+    Pick the last element in the array as the pivot.
+    Separate values into arrays based on whether they are
+    greater than, less than, or equal to the pivot.
+    Recursively sort the greater than and less than arrays.
+    Return an new array merging the sorted arrays and the pivot.
+    """
     if len(inputArray) <= 1:
         return inputArray
     pivot = inputArray[-1]
@@ -14,11 +26,21 @@ def quicksort(inputArray):
             equal.append(value)
     lesser = quicksort(lesser)
     greater = quicksort(greater)
-    # print inputArray
     return lesser + equal + [pivot] + greater
 
 
 def in_place_quicksort(inputArray):
+    """input: array
+    output: sorted array
+    features: in-place, stable
+    efficiency O(n^2) (worst case), O(n log(n)) (avg/best case):
+    space complexity: O(log(n))
+    method:
+    Pick the last element in the array as the pivot.
+    Move all values larger than it above it.
+    Continue sorting recursively on either side of the pivot
+    until the full array is sorted.
+    """
     if len(inputArray) <= 1:
         return inputArray
     pivot_index = len(inputArray) - 1
@@ -38,7 +60,6 @@ def in_place_quicksort(inputArray):
             pivot_index -= 1
     inputArray[:pivot_index] = in_place_quicksort(inputArray[:pivot_index])
     inputArray[pivot_index + 1:] = in_place_quicksort(inputArray[pivot_index + 1:])
-    # print inputArray
     return inputArray
 
 
