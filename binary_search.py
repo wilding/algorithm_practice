@@ -1,5 +1,12 @@
 def binary_search(listData, value):
-    """docstring for binary_search"""
+    """inputs: sorted array, value
+    outputs: value if it is in the array, -1 otherwise
+    efficiency: O(log(n))
+    method:
+    Find mid value of array; return value if equal to given value.
+    Perform same procedure on portion of list before or after mid value,
+    depending on whether given value is larger or smaller than mid value.
+    Continue until the given value is found or there are no values to check."""
     low = 0
     high = len(listData) - 1
     while low <= high:
