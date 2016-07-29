@@ -95,3 +95,50 @@ class Graph(object):
                 counter += 1
             adjacency_matrix.append(matrix_row)
         return adjacency_matrix
+
+    def dfs(self, start_node_num):
+        """Outputs a list of numbers corresponding to the traversed nodes
+        in a Depth First Search.
+        ARGUMENTS: start_node_num is the starting node number (integer)
+        RETURN: a list of the node values (integers)."""
+        start_node = self.find_node(start_node_num)
+        return self.dfs_helper(start_node, visited=[])
+
+    def bfs(self, start_node_num):
+        """TODO: Create an iterative implementation of Breadth First Search
+        iterating through a node's edges. The output should be a list of
+        numbers corresponding to the traversed nodes.
+        ARGUMENTS: start_node_num is the node number (integer)
+        RETURN: a list of the node values (integers)."""
+        ret_list = [start_node_num]
+        for node_value in ret_list:
+            node = self.find_node(node_value)
+            for edge in node.edges:
+                if edge.node_from == node and edge.node_to.value not in ret_list:
+                    ret_list.append(edge.node_to.value)
+        return ret_list
+
+    def dfs_helper(self, start_node, visited):
+        """TODO: Write the helper function for a recursive implementation
+        of Depth First Search iterating through a node's edges. The
+        output should be a list of numbers corresponding to the
+        values of the traversed nodes.
+        ARGUMENTS: start_node is the starting Node
+        Because this is recursive, we pass in the set of visited node
+        values.
+        RETURN: a list of the traversed node values (integers).
+        """
+        if start_node:
+            visited.append(start_node.value)
+            for edge in start_node.edges:
+                if edge.node_from == start_node and edge.node_to.value not in visited:
+                    visited = self.dfs_helper(edge.node_to, visited)
+        return visited
+
+    def find_node(self, node_value):
+        """input: value
+        output: first node in the graph with given value"""
+        for node in self.nodes:
+            if node_value == node.value:
+                return node
+        return None
