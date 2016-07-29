@@ -1,10 +1,13 @@
 class Node(object):
+    """docstring for Node class"""
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
 
+
 class BinaryTree(object):
+    """docstring for BinaryTree class"""
     def __init__(self, root):
         self.root = Node(root)
 
@@ -48,6 +51,7 @@ class BinaryTree(object):
 
 
 class BST(object):
+    """docstring for BST class"""
     def __init__(self, root):
         self.root = Node(root)
 
